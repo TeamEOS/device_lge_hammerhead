@@ -90,6 +90,8 @@
 /system/lib/libWVphoneAPI.so
 /system/lib/libxml.so
 /system/vendor/bin/vss_init
+/system/vendor/firmware/a330_pfp.fw
+/system/vendor/firmware/a330_pm4.fw
 /system/vendor/firmware/adsp.b00
 /system/vendor/firmware/adsp.b01
 /system/vendor/firmware/adsp.b02
@@ -104,8 +106,6 @@
 /system/vendor/firmware/adsp.b11
 /system/vendor/firmware/adsp.b12
 /system/vendor/firmware/adsp.mdt
-/system/vendor/firmware/a330_pfp.fw
-/system/vendor/firmware/a330_pm4.fw
 /system/vendor/firmware/bcm2079x-b5_firmware.ncd
 /system/vendor/firmware/bcm2079x-b5_pre_firmware.ncd
 /system/vendor/firmware/bcm4335c0.hcd
