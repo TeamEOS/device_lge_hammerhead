@@ -14,4 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_hammerhead-userdebug
+for i in eng userdebug user; do
+add_lunch_combo full_hammerhead-${i}
+done
