@@ -19,5 +19,5 @@
     <bool name="config_show_mobile_plan">false</bool>
 
     <!-- Volume Rocker Wake -->
-    <bool name="config_show_volumeRockerWake">true</bool>
+    <!--bool name="config_show_volumeRockerWake">true</bool-->
 </resources>
