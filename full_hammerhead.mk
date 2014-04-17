@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+
+$(call inherit-product, vendor/eos/config/common_full_phone.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
@@ -22,10 +28,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 PRODUCT_NAME := full_hammerhead
 PRODUCT_DEVICE := hammerhead
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on HammerHead
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 $(call inherit-product, device/lge/hammerhead/device.mk)
 $(call inherit-product-if-exists, vendor/lge/hammerhead/hammerhead-vendor.mk)
+
+# Copy Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/eos/prebuilt/common/bootanimation/1080.zip:system/media/bootanimation.zip
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=hammerhead BUILD_FINGERPRINT=google/hammerhead/hammerhead:4.4.2/KOT49H/937116:user/release-keys PRIVATE_BUILD_DESC="hammerhead-user 4.4.2 KOT49H 937116 release-keys"
+
+# Enable Torch
+PRODUCT_PACKAGES += Torch
