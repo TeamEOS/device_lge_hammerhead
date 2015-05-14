@@ -23,8 +23,11 @@ PRODUCT_COPY_FILES := device/lge/hammerhead/apns-full-conf.xml:system/etc/apns-c
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/eos/config/nfc_enhanced.mk)
+
 # Inherit from the EOS vendor, if present
-$(call inherit-product-if-exists, vendor/eos/config/common_full_phone.mk)
+$(call inherit-product, vendor/eos/config/common_full_phone.mk)
 
 # Copy Bootanimation
 PRODUCT_COPY_FILES += \
