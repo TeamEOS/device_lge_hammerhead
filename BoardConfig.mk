@@ -78,9 +78,13 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_ION := true
 
-# Enable dex-preoptimization to speed up first boot
+# Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
-WITH_DEXPREOPT := true
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
 endif
 DONT_DEXPREOPT_PREBUILTS := true
 
