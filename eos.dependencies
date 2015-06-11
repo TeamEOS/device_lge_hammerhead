@@ -10,7 +10,9 @@
    "target_path": "vendor/lge"
  },
  {
-   "repository": "device_qcom_common",
-   "target_path": "device/qcom/common"
+   "remote": "github",
+   "repository": "CyanogenMod/android_device_qcom_common",
+   "target_path": "device/qcom/common",
+   "revision": "cm-12.1"
  }
 ]
