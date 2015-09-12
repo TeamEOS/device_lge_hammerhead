@@ -1,6 +1,12 @@
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+PRODUCT_COPY_FILES += \
+vendor/eos/prebuilt/common/bootanimation/1080.zip:system/media/bootanimation.zip
+
+# Inherit some common EOS stuff
+$(call inherit-product, vendor/eos/config/common_full_phone.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/eos/config/nfc_enhanced.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
@@ -16,5 +22,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=hammerhead \
     BUILD_FINGERPRINT=google/hammerhead/hammerhead:5.1.1/LMY48M/2167285:user/release-keys \
     PRIVATE_BUILD_DESC="hammerhead-user 5.1.1 LMY48M 2167285 release-keys"
-
-PRODUCT_NAME := eos_hammerhead
